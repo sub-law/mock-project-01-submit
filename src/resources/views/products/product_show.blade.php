@@ -112,7 +112,7 @@
                             @if (!empty($comment->user->profile_image))
                             <img src="{{ asset('storage/profile_images/' . $comment->user->profile_image) }}" alt="ユーザー画像">
                             @else
-                            <img src="{{ asset('images/default-user.png') }}" alt="デフォルト画像">
+                            <img src="{{ asset('storage/profile_images/no.image.png') }}" alt="代替画像">
                             @endif
                         </div>
 

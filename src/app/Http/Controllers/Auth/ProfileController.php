@@ -20,17 +20,17 @@ class ProfileController extends Controller
         /** @var \App\Models\User $user */
         $user = Auth::user();
 
-        $validated = $request->validated();
-
         if ($request->hasFile('profile_image')) {
             $path = $request->file('profile_image')->store('public/profile_images');
             $user->profile_image = basename($path);
         }
-        
-        $user->name = $validated['name'];
-        $user->postal_code = $validated['postal_code'];
-        $user->address = $validated['address'];
-        $user->save();
+
+        $user->update($request->only([
+            'name',
+            'postal_code',
+            'address',
+            'building_name',
+        ]));
 
         return redirect()->route('index')->with('status', 'プロフィールを更新しました！');
     }
@@ -48,17 +48,18 @@ class ProfileController extends Controller
         /** @var \App\Models\User $user */
         $user = Auth::user();
 
-        $validated = $request->validated();
-
         if ($request->hasFile('profile_image')) {
             $path = $request->file('profile_image')->store('public/profile_images');
             $user->profile_image = basename($path);
         }
-        
-        $user->name = $validated['name'];
-        $user->postal_code = $validated['postal_code'];
-        $user->address = $validated['address'];
-        $user->save();
+
+        $user->update($request->only([
+            'name',
+            'postal_code',
+            'address',
+            'building_name',
+        ]));
+
 
         return redirect()->route('index')->with('status', 'プロフィールを更新しました！');
     }
