@@ -19,22 +19,22 @@ class ExhibitionController extends Controller
     {
         $user = auth()->user();
 
-        $product = new Product();
-        $product->seller_id = $user->id;
-        $product->name = $request->input('name');
-        $product->brand = $request->input('brand');
-        $product->description = $request->input('description');
+        $data = [
+            'seller_id'   => $user->id,
+            'name'        => $request->name,
+            'brand'       => $request->brand,
+            'description' => $request->description,
+            'condition'   => $request->condition,
+            'price'       => $request->price,
+            'status'      => 'available',
+        ];
 
         if ($request->hasFile('image_path')) {
             $path = $request->file('image_path')->store('products', 'public');
-            $filename = basename($path);
-            $product->image_path = $filename;
+            $data['image_path'] = basename($path);
         }
 
-        $product->condition = $request->input('condition'); 
-        $product->price = $request->input('price');
-        $product->status = 'available';
-        $product->save();
+        $product = Product::create($data);
 
         $categoryIds = $request->input('category_ids', []);
         $product->categories()->sync($categoryIds);
