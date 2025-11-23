@@ -48,7 +48,7 @@
         @enderror
 
         <label for="building" class="form-label">建物名</label>
-        <input type="text" id="building" name="building" class="form-input">
+        <input type="text" id="building_name" name="building_name" class="form-input">
 
         <button type="submit" class="form-button">更新する</button>
     </form>

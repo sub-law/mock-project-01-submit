@@ -30,13 +30,14 @@ class UsersTableSeeder extends Seeder
             'postal_code' => '123-4567',
             'address' => '東京都足立区',
             'building_name' => 'きのこビル201',
+            'email_verified_at' => Carbon::now(),
         ]);
 
         User::create([
             'name' => 'watermelon',
             'email' => 'watermelon@example.com',
             'password' => Hash::make('password'),
-            'profile_image' => 'watermelon.png',
+            'email_verified_at' => Carbon::now(),
         ]);
     }
 }

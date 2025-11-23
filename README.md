@@ -71,6 +71,7 @@ PHPコンテナから出る　Ctrl+D
 name  kiwi
 email  kiwi@example.com
 password  password
+メール認証済み
 profile_image  kiwi.png
 postal_code  123-4567
 address  東京都足立区
@@ -79,12 +80,12 @@ building_name  きのこビル101
 購入数:0
 お気に入り:全商品(自身が出品した商品含む)
 コメント:1('マイク',)
-メール認証済み
 
 ## 2
 name  orange
 email  orange@example.com
 password  password
+メール認証済み
 profile_image  orange.png
 postal_code  123-4567
 address  東京都足立区
@@ -93,19 +94,18 @@ building_name  きのこビル201
 購入数:1('腕時計',)
 お気に入り:5(自身が出品した商品を除く全て)
 コメント:1('ノートPC',)
-メール未認証
 
 ## 3
 name  watermelon
 email  watermelon@example.com
 password password
-profile_image  watermelon.png
+メール認証済み
+ユーザー画像未登録
+住所未登録
 出品数:0
 購入数:0
 お気に入り:全商品
 コメント:1('腕時計',)
-住所未登録
-メール未認証
 
 ## 補足（ユーザー仕様関連）
 新規登録ユーザーは、自身が出品した商品に対して「お気に入り」「コメント」機能を利用できません。
